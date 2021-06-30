@@ -1,0 +1,17 @@
+@use 'styles/mixins' as mixins;
+
+.App {
+  @include mixins.setwidthandheight(100vw, 100vh);
+  @include mixins.flexeddiv(row, center);
+  background-color: #282c34;
+
+  .App-content {
+    @include mixins.setwidthandheight(80%, 100%);
+    @include mixins.flexeddiv(column, space-around);
+
+    .main {
+      @include mixins.setwidthandheight(100%, 85%);
+      background-color: rebeccapurple;
+    }
+  }
+}
