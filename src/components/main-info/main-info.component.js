@@ -15,15 +15,15 @@ const MainInfo = () => {
           <span>Sample Text</span>
         </div>
       </div>
-      <div className="tech-info">
-        <div>react</div>
-        <div>redux</div>
-        <div>...</div>
-        <div>...</div>
-        <div>...</div>
-        <div>...</div>
-        <div>...</div>
-        <div>...</div>
+      <div className="tech-info-container">
+        <div className="tech-info">react</div>
+        <div className="tech-info">redux</div>
+        <div className="tech-info">...</div>
+        <div className="tech-info">...</div>
+        <div className="tech-info">...</div>
+        <div className="tech-info">...</div>
+        <div className="tech-info">...</div>
+        <div className="tech-info">...</div>
       </div>
     </div>
   );
