@@ -1,8 +1,8 @@
 @use '../../styles/mixins' as mixins;
 
 .maininfo {
-  @include mixins.flexeddiv(column, space-around);
-  height: 50%;
+  @include mixins.flexeddiv(column, space-between);
+  height: 20vh;
 
   .about {
     @include mixins.flexeddiv(row, space-around);
@@ -22,8 +22,15 @@
     }
   }
 
-  .tech-info {
-    @include mixins.flexeddiv(row, space-evenly);
-    width: 100%;
+  .tech-info-container {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+
+    .tech-info {
+      flex: 1 10%;
+      //max-width: 16%;
+    }
   }
 }

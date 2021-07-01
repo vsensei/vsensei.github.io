@@ -1,17 +1,106 @@
 @use 'styles/mixins' as mixins;
 
 .App {
-  @include mixins.setwidthandheight(100vw, 100vh);
-  @include mixins.flexeddiv(row, center);
+  width: 100%;
+  position: absolute;
   background-color: #282c34;
+  min-height: 100%;
 
   .App-content {
-    @include mixins.setwidthandheight(80%, 100%);
-    @include mixins.flexeddiv(column, space-around);
+    width: 80%;
+    margin: 0 auto;
 
     .main {
-      @include mixins.setwidthandheight(100%, 85%);
+      margin-top: 15%;
+      padding: 15% 0 3% 0;
       background-color: rebeccapurple;
+    }
+
+    .separator {
+      text-align: center;
+      padding: 10% 0;
+    }
+
+    .projects-container {
+      width: 95%;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .project {
+        height: 15vh;
+        flex: 1 40%;
+        background-color: rgb(78, 72, 78, 0.8);
+        display: inline-block;
+        position: relative;
+        border-radius: 12px;
+        background-size: contain;
+
+        .project-overlay {
+          @include mixins.setwidthandheight(100%, 100%);
+          position: absolute;
+          transition: all 0.5s;
+          border-radius: 12px;
+          opacity: 0;
+
+          &:hover {
+            background-color: rgb(78, 72, 78, 0.8);
+            opacity: 1;
+          }
+
+          .project-overlay-up {
+            @include mixins.flexeddiv(column, flex-end);
+            height: 50%;
+
+            .links-container {
+              @include mixins.flexeddiv(row, center);
+              margin: 0 auto;
+              width: 60%;
+
+              .link-separator {
+                border-left: 1px solid white;
+                margin: 0 10%;
+              }
+
+              .link-url {
+                @include mixins.setwidthandheight(40px, 40px);
+                //transition: all ease 0.2s;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 95%;
+                cursor: pointer;
+
+                &:hover {
+                  background-size: 100%;
+                }
+              }
+            }
+          }
+
+          .project-overlay-down {
+            @include mixins.flexeddiv(column, center);
+            height: 50%;
+
+            .tech-info-container {
+              margin: 0 auto;
+              display: flex;
+              flex-wrap: wrap;
+              width: 90%;
+
+              .tech-info {
+                flex: 1 10%;
+                //max-width: 16%;
+              }
+            }
+          }
+        }
+      }
+
+      &::after {
+        content: '';
+        flex: 1 40%;
+      }
     }
   }
 }

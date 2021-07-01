@@ -7,6 +7,36 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Scrollbar for Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+  height: unset;
+  background-color: #282c34;
+}
+
+*::-webkit-scrollbar-track-piece {
+  border-radius: 10px;
+  background-color: #282c34;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  -webkit-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #6a6a6a;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  -webkit-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+}
+
+/* Scrollbar for Firefox */
+* {
+  scrollbar-color: grey #282c34;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
