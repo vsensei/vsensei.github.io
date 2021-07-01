@@ -1,0 +1,29 @@
+@use '../../styles/mixins' as mixins;
+
+.maininfo {
+  @include mixins.flexeddiv(column, space-around);
+  height: 50%;
+
+  .about {
+    @include mixins.flexeddiv(row, space-around);
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .my-info {
+      @include mixins.flexeddiv(column, space-around);
+    }
+  }
+
+  .tech-info {
+    @include mixins.flexeddiv(row, space-evenly);
+    width: 100%;
+  }
+}
