@@ -1,0 +1,58 @@
+@use './mixins';
+
+%rowflex {
+  display: flex;
+}
+
+%columnflex {
+  @extend %rowflex;
+  flex-direction: column;
+}
+
+%hor-cent-block {
+  margin: 0 auto;
+}
+
+%flex-wrap-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 75%;
+  gap: 20px;
+}
+
+%flex-wrap-container-hor-cent {
+  @extend %flex-wrap-container;
+  @extend %hor-cent-block;
+}
+
+%centback {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+%centtext {
+  text-align: center;
+}
+
+%defaulttransition {
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+%pointer {
+  cursor: pointer;
+}
+
+%smallflex {
+  flex: 1 10%;
+}
+
+%bigflex {
+  flex: 1 40%;
+}
+
+%emptycontent {
+  content: '';
+}

@@ -1,47 +1,52 @@
 @use 'styles/mixins' as mixins;
+@use 'styles/common';
 
 .App {
   width: 100%;
   position: absolute;
   background-color: #282c34;
+  color: #8a8a8a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   min-height: 100%;
 
   .App-content {
+    @extend %hor-cent-block;
     width: 80%;
-    margin: 0 auto;
 
     .main {
-      margin-top: 15%;
-      padding: 15% 0 3% 0;
-      background-color: rebeccapurple;
+      margin-top: 3%;
+      padding: 5% 0 3% 0;
     }
 
     .separator {
-      text-align: center;
+      @extend %centtext;
       padding: 10% 0;
     }
 
     .projects-container {
-      width: 95%;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
+      @extend %flex-wrap-container;
+      justify-content: center;
+      margin: 5% auto 0 auto;
 
       .project {
-        height: 15vh;
-        flex: 1 40%;
-        background-color: rgb(78, 72, 78, 0.8);
+        @extend %centback;
+        @extend %bigflex;
+        height: 280px;
+        max-width: 50%;
+        min-width: 500px;
+        box-shadow: 8px 8px 0 rgb(0 0 0 / 25%);
         display: inline-block;
         position: relative;
         border-radius: 12px;
-        background-size: contain;
+        background-size: 100% 100%;
+        overflow: hidden;
 
         .project-overlay {
           @include mixins.setwidthandheight(100%, 100%);
+          @extend %defaulttransition;
           position: absolute;
-          transition: all 0.5s;
-          border-radius: 12px;
           opacity: 0;
 
           &:hover {
@@ -50,12 +55,25 @@
           }
 
           .project-overlay-up {
-            @include mixins.flexeddiv(column, flex-end);
-            height: 50%;
+            @include mixins.setwidthandheight(90%, 15%);
+            @extend %centtext;
+            @extend %columnflex;
+            justify-content: flex-end;
+            color: white;
+            border-bottom: 1px solid white;
+            margin: auto 5%;
+            padding-bottom: 5px;
+          }
+
+          .project-overlay-middle {
+            @extend %columnflex;
+            justify-content: flex-end;
+            height: 35%;
 
             .links-container {
-              @include mixins.flexeddiv(row, center);
-              margin: 0 auto;
+              @extend %hor-cent-block;
+              @extend %rowflex;
+              justify-content: center;
               width: 60%;
 
               .link-separator {
@@ -65,11 +83,9 @@
 
               .link-url {
                 @include mixins.setwidthandheight(40px, 40px);
-                //transition: all ease 0.2s;
-                background-repeat: no-repeat;
-                background-position: center;
+                @extend %centback;
+                @extend %pointer;
                 background-size: 95%;
-                cursor: pointer;
 
                 &:hover {
                   background-size: 100%;
@@ -79,27 +95,16 @@
           }
 
           .project-overlay-down {
-            @include mixins.flexeddiv(column, center);
+            @extend %columnflex;
+            justify-content: center;
             height: 50%;
-
-            .tech-info-container {
-              margin: 0 auto;
-              display: flex;
-              flex-wrap: wrap;
-              width: 90%;
-
-              .tech-info {
-                flex: 1 10%;
-                //max-width: 16%;
-              }
-            }
           }
         }
       }
 
       &::after {
-        content: '';
-        flex: 1 40%;
+        @extend %bigflex;
+        @extend %emptycontent;
       }
     }
   }
