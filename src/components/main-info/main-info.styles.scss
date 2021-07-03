@@ -1,0 +1,28 @@
+@use '../../styles/mixins' as mixins;
+@use '../../styles/common';
+
+.maininfo {
+  @extend %columnflex;
+  justify-content: space-between;
+  height: 30vh;
+
+  .about {
+    @extend %rowflex;
+    justify-content: space-around;
+
+    .avatar {
+      @include mixins.setwidthandheight(150px, 150px);
+
+      img {
+        @include mixins.setwidthandheight(100%, 100%);
+        border-radius: 50%;
+        border: 2px solid black;
+      }
+    }
+
+    .my-info {
+      @extend %columnflex;
+      justify-content: space-around;
+    }
+  }
+}
