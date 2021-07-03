@@ -1,0 +1,35 @@
+@use '../../styles/mixins' as mixins;
+@use '../../styles/variables' as vars;
+@use '../../styles/common';
+
+.tech-info-container {
+  @extend %flex-wrap-container-hor-cent;
+
+  .tech-info {
+    @extend %centtext;
+    @extend %defaulttransition;
+    @extend %pointer;
+    @extend %smallflex;
+    @extend %columnflex;
+    justify-content: center;
+    background-color: vars.$defaultbasecolor;
+    border-radius: 4px;
+    border: 1px solid vars.$shadowcolor;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 2px 2px 0 vars.$shadowcolor;
+    height: 30px;
+
+    &:hover {
+      background-color: vars.$defaulthovercolor;
+    }
+
+    &.chosen {
+      background-color: vars.$defaultchosencolor;
+    }
+  }
+  &::after {
+    @extend %smallflex;
+    @extend %emptycontent;
+  }
+}
