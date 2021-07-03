@@ -1,98 +1,79 @@
 import { useState } from 'react';
 import './App.scss';
+import projects, { githubProfile } from './information/projects';
+import technologies from './information/technologies';
 import MainInfo from './components/main-info/main-info.component';
+import TechInfo from './components/tech-info/tech-info.component';
 
 function App() {
-  const techs = ['react', 'redux', '...', '...', '...', '...', '...'];
-  const projects = [
-    {
-      name: 'Sample Project',
-      screenshot: 'project_liminal_screen.png',
-      projectlink: 'http://project-liminal.herokuapp.com/',
-      githublink: 'https://github.com/VinishkoSensei/Project_Liminal',
-      logo: 'project_liminal.svg',
-      techs: techs,
-    },
-    {
-      name: 'Sample Project',
-      screenshot: 'project_liminal_screen.png',
-      projectlink: 'http://project-liminal.herokuapp.com/',
-      githublink: 'https://github.com/VinishkoSensei/Project_Liminal',
-      logo: 'project_liminal.svg',
-      techs: [],
-    },
-    {
-      name: 'Sample Project',
-      screenshot: 'project_liminal_screen.png',
-      projectlink: 'http://project-liminal.herokuapp.com/',
-      githublink: 'https://github.com/VinishkoSensei/Project_Liminal',
-      logo: 'project_liminal.svg',
-      techs: [],
-    },
-    {
-      name: 'Sample Project',
-      screenshot: '',
-      projectlink: '',
-      githublink: '',
-      logo: 'project_liminal.svg',
-      techs: techs,
-    },
-  ];
+  const [filteredTechnologies, setFilteredTechnologies] = useState(
+    Object.fromEntries(technologies.map((tech) => [[tech], false]))
+  );
+  const [allFilters, setAllFilters] = useState(true);
 
-  const getProjects = (projects) =>
-    projects.map((project, index) => {
-      const { screenshot, projectlink, githublink, logo, techs } = project;
-      return screenshot && projectlink && logo ? (
-        <div
-          className="project"
-          key={index}
-          style={{ backgroundImage: `url('images/${screenshot}')` }}
-        >
-          <div className="project-overlay">
-            <div className="project-overlay-up">
-              <div className="links-container">
-                <a href={projectlink} target="_blank" rel="noreferrer nofollow">
-                  <div
-                    className="link-url"
-                    style={{
-                      backgroundImage: `url('images/${logo}')`,
-                    }}
-                  ></div>
-                </a>
-                <div className="link-separator" />
-                <a href={githublink} target="_blank" rel="noreferrer nofollow">
-                  <div
-                    className="link-url"
-                    style={{
-                      backgroundImage: `url('images/github-logo.svg')`,
-                    }}
-                  ></div>
-                </a>
-              </div>
-            </div>
-            <div className="project-overlay-down">
-              <div className="tech-info-container">
-                {techs.map((tech, index) => (
-                  <div className="tech-info" key={index}>
-                    {tech}
-                  </div>
-                ))}
-              </div>
+  const getProjects = projects.map((project, index) => {
+    const { screenshot, projectlink, githublink, logo, technologies, name } =
+      project;
+    return screenshot &&
+      projectlink &&
+      logo &&
+      (allFilters ||
+        technologies.reduce(
+          (acc, tech) => (acc += filteredTechnologies[tech] ? 1 : 0),
+          0
+        )) ? (
+      <div
+        className="project"
+        key={index}
+        style={{ backgroundImage: `url('images/${screenshot}')` }}
+      >
+        <div className="project-overlay">
+          <div className="project-overlay-up">{name}</div>
+          <div className="project-overlay-middle">
+            <div className="links-container">
+              <a href={projectlink} target="_blank" rel="noreferrer nofollow">
+                <div
+                  className="link-url"
+                  style={{
+                    backgroundImage: `url('images/${logo}')`,
+                  }}
+                ></div>
+              </a>
+              <div className="link-separator" />
+              <a
+                href={`${githubProfile}${githublink}`}
+                target="_blank"
+                rel="noreferrer nofollow"
+              >
+                <div
+                  className="link-url"
+                  style={{
+                    backgroundImage: `url('images/github-logo.svg')`,
+                  }}
+                ></div>
+              </a>
             </div>
           </div>
+          <div className="project-overlay-down">
+            <TechInfo technologies={technologies} />
+          </div>
         </div>
-      ) : null;
-    });
+      </div>
+    ) : null;
+  });
 
   return (
     <div className="App">
       <div className="App-content">
         <div className="main">
-          <MainInfo />
-          <div className="separator">
-            Projects filter: <i>All</i>
-          </div>
-          <div className="projects-container">{getProjects(projects)}</div>
+          <MainInfo
+            allFilters={allFilters}
+            setAllFilters={setAllFilters}
+            filteredTechnologies={filteredTechnologies}
+            setFilteredTechnologies={setFilteredTechnologies}
+            githubProfile={githubProfile}
+          />
+          <div className="projects-container">{getProjects}</div>
         </div>
       </div>
     </div>
