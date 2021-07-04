@@ -1,6 +1,7 @@
 import './main-info.styles.scss';
-import technologies from '../../information/technologies';
-import TechInfo from '../tech-info/tech-info.component';
+import technologies from 'information/technologies';
+import profileInfo from 'information/profileinfo';
+import TechInfo from 'components/tech-info/tech-info.component';
 
 const MainInfo = ({
   allFilters,
@@ -36,7 +37,7 @@ const MainInfo = ({
           <span>
             <i>@vinishkosensei</i>
           </span>
-          <span>Sample Text</span>
+          <span>{profileInfo}</span>
         </div>
       </div>
       <TechInfo
