@@ -4,6 +4,7 @@ import projects, { githubProfile } from 'information/projects';
 import technologies from 'information/technologies';
 import MainInfo from 'components/main-info/main-info.component';
 import TechInfo from 'components/tech-info/tech-info.component';
+import Link from 'components/link/link.component';
 
 function App() {
   const [filteredTechnologies, setFilteredTechnologies] = useState(
@@ -31,27 +32,13 @@ function App() {
           <div className="project-overlay-up">{name}</div>
           <div className="project-overlay-middle">
             <div className="links-container">
-              <a href={projectlink} target="_blank" rel="noreferrer nofollow">
-                <div
-                  className="link-url"
-                  style={{
-                    backgroundImage: `url('images/${logo}')`,
-                  }}
-                ></div>
-              </a>
+              <Link href={projectlink} className="link-url" image={logo} />
               <div className="link-separator" />
-              <a
+              <Link
                 href={`${githubProfile}${githublink}`}
-                target="_blank"
-                rel="noreferrer nofollow"
-              >
-                <div
-                  className="link-url"
-                  style={{
-                    backgroundImage: `url('images/github-logo.svg')`,
-                  }}
-                ></div>
-              </a>
+                className="link-url"
+                image="github-logo.svg"
+              />
             </div>
           </div>
           <div className="project-overlay-down">
