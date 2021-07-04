@@ -1,6 +1,6 @@
-@use '../../styles/mixins' as mixins;
-@use '../../styles/variables' as vars;
-@use '../../styles/common';
+@use 'styles/mixins' as mixins;
+@use 'styles/variables' as vars;
+@use 'styles/common';
 
 .tech-info-container {
   @extend %flex-wrap-container-hor-cent;
