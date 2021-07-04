@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import './App.scss';
-import projects, { githubProfile } from './information/projects';
-import technologies from './information/technologies';
-import MainInfo from './components/main-info/main-info.component';
-import TechInfo from './components/tech-info/tech-info.component';
+import projects, { githubProfile } from 'information/projects';
+import technologies from 'information/technologies';
+import MainInfo from 'components/main-info/main-info.component';
+import TechInfo from 'components/tech-info/tech-info.component';
 
 function App() {
   const [filteredTechnologies, setFilteredTechnologies] = useState(
