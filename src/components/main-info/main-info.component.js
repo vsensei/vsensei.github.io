@@ -2,6 +2,7 @@ import './main-info.styles.scss';
 import technologies from 'information/technologies';
 import profileInfo from 'information/profileinfo';
 import TechInfo from 'components/tech-info/tech-info.component';
+import Link from 'components/link/link.component';
 
 const MainInfo = ({
   allFilters,
@@ -26,17 +27,18 @@ const MainInfo = ({
 
   return (
     <div className="maininfo">
+      <div className="headline">full-stack web developer</div>
       <div className="about">
         <div className="avatar">
-          <a href={githubProfile} target="_blank" rel="noreferrer nofollow">
+          <Link href={githubProfile}>
             <img src="images/avatar.jpg" alt="avatar" />
-          </a>
+          </Link>
         </div>
         <div className="my-info">
           <span>Nikita Afanasiev</span>
-          <span>
+          <Link href={githubProfile}>
             <i>@vinishkosensei</i>
-          </span>
+          </Link>
           <span>{profileInfo}</span>
         </div>
       </div>
