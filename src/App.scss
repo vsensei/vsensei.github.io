@@ -26,7 +26,6 @@
     width: 80%;
 
     .main {
-      margin-top: 3%;
       padding: 5% 0 3% 0;
     }
 
@@ -45,7 +44,7 @@
         @extend %bigflex;
         height: 280px;
         max-width: 50%;
-        min-width: 500px;
+        min-width: 420px;
         box-shadow: 8px 8px 0 rgb(0 0 0 / 25%);
         display: inline-block;
         position: relative;
