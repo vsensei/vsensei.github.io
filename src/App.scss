@@ -1,4 +1,5 @@
 @use 'styles/mixins' as mixins;
+@use 'styles/variables' as vars;
 @use 'styles/common';
 
 .App {
@@ -10,6 +11,15 @@
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   min-height: 100%;
+
+  a {
+    @extend %defaulttransition;
+    color: #8a8a8a;
+
+    &:hover {
+      color: vars.$headlinecolor;
+    }
+  }
 
   .App-content {
     @extend %hor-cent-block;
