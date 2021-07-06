@@ -5,6 +5,7 @@ import technologies from 'information/technologies';
 import MainInfo from 'components/main-info/main-info.component';
 import TechInfo from 'components/tech-info/tech-info.component';
 import Link from 'components/link/link.component';
+const _ = require('lodash');
 
 function App() {
   const [filteredTechnologies, setFilteredTechnologies] = useState(
@@ -15,14 +16,15 @@ function App() {
   const getProjects = projects.map((project, index) => {
     const { screenshot, projectlink, githublink, logo, technologies, name } =
       project;
-    return screenshot &&
-      projectlink &&
-      logo &&
-      (allFilters ||
-        technologies.reduce(
-          (acc, tech) => (acc += filteredTechnologies[tech] ? 1 : 0),
-          0
-        )) ? (
+    const filteredTechnologiesArray = _.keys(_.pickBy(filteredTechnologies));
+    const isIncludedInFilter =
+      allFilters ||
+      (filteredTechnologiesArray.every((tech) => technologies.includes(tech)) &&
+        filteredTechnologiesArray.length);
+    const shouldDisplay =
+      screenshot && projectlink && logo && isIncludedInFilter;
+
+    return shouldDisplay ? (
       <div
         className="project"
         key={index}
