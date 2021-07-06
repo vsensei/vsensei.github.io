@@ -19,6 +19,8 @@
     font-weight: bold;
     box-shadow: 2px 2px 0 vars.$shadowcolor;
     height: 30px;
+    padding: 0 5px;
+    max-width: fit-content;
 
     &:hover {
       background-color: vars.$defaulthovercolor;
