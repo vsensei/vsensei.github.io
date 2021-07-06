@@ -20,7 +20,7 @@ const TechInfo = ({
       ) : (
         <>
           <div
-            className={`tech-info${allFilters ? ' chosen' : ''}`}
+            className={`tech-info hover${allFilters ? ' chosen' : ''}`}
             onClick={clearTechnologiesFilter}
           >
             All
@@ -28,7 +28,7 @@ const TechInfo = ({
           {Object.keys(filteredTechnologies).map((tech, index) => {
             return (
               <div
-                className={`tech-info${
+                className={`tech-info hover${
                   filteredTechnologies[tech] ? ' chosen' : ''
                 }`}
                 key={index}
