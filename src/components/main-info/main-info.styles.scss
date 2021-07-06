@@ -20,11 +20,17 @@
     justify-content: center;
     gap: 10%;
 
+    @media screen and (orientation: portrait) and (max-width: 600px) {
+      height: 25vh;
+    }
+
     .avatar {
-      @include mixins.setwidthandheight(150px, 150px);
+      @extend %fullheight;
+      @extend %columnflex;
+      justify-content: center;
 
       img {
-        @include mixins.setwidthandheight(100%, 100%);
+        @include mixins.setwidthandheight(150px, 150px);
         border-radius: 50%;
         border: 2px solid black;
       }
