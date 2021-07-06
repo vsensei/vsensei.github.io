@@ -8,7 +8,6 @@
   .tech-info {
     @extend %centtext;
     @extend %defaulttransition;
-    @extend %pointer;
     @extend %smallflex;
     @extend %columnflex;
     justify-content: center;
@@ -21,13 +20,18 @@
     height: 30px;
     padding: 0 5px;
     max-width: fit-content;
+    cursor: default;
 
-    &:hover {
-      background-color: vars.$defaulthovercolor;
-    }
+    &.hover {
+      @extend %pointer;
 
-    &.chosen {
-      background-color: vars.$defaultchosencolor;
+      &:hover {
+        background-color: vars.$defaulthovercolor;
+      }
+
+      &.chosen {
+        background-color: vars.$defaultchosencolor;
+      }
     }
   }
   &::after {
