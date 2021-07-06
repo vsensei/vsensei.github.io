@@ -5,7 +5,6 @@
 .maininfo {
   @extend %columnflex;
   justify-content: space-between;
-  height: 30vh;
 
   .headline {
     @extend %centtext;
@@ -17,6 +16,7 @@
 
   .about {
     @extend %rowflex;
+    margin: 20px 0px;
     justify-content: center;
     gap: 10%;
 
