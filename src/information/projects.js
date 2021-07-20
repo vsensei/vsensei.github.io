@@ -1,4 +1,4 @@
-export const githubProfile = 'https://github.com/VinishkoSensei/';
+export const githubProfile = 'https://github.com/vsensei/';
 const projects = [
   {
     name: 'Project_Liminal',
