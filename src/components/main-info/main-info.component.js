@@ -37,7 +37,7 @@ const MainInfo = ({
         <div className="my-info">
           <span>VSensei</span>
           <Link href={githubProfile}>
-            <i>@vinishkosensei</i>
+            <i>@vsensei</i>
           </Link>
           <span>{profileInfo}</span>
         </div>
