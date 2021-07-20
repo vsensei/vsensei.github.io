@@ -1,2 +1,3 @@
-Nikita Afanasiev`s Portfolio project
-@vinishkosensei
+# Nikita Afanasiev`s Portfolio project
+
+## @vsensei
