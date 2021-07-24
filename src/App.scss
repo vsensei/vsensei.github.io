@@ -70,7 +70,7 @@
           }
 
           .project-overlay-up {
-            @include mixins.setwidthandheight(90%, 15%);
+            @include mixins.setwidthandheight(90%, 10%);
             @extend %centtext;
             @extend %columnflex;
             justify-content: flex-end;
@@ -83,13 +83,19 @@
           .project-overlay-middle {
             @extend %columnflex;
             justify-content: flex-end;
-            height: 35%;
+            height: 45%;
+
+            .project-description {
+              width: 90%;
+              margin: auto 5%;
+              word-wrap: break-word;
+            }
 
             .links-container {
               @extend %hor-cent-block;
               @extend %rowflex;
-              justify-content: center;
               width: 60%;
+              justify-content: center;
 
               .link-separator {
                 border-left: 1px solid white;
@@ -112,7 +118,7 @@
           .project-overlay-down {
             @extend %columnflex;
             justify-content: center;
-            height: 50%;
+            height: 45%;
           }
         }
       }
