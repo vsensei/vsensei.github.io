@@ -14,8 +14,15 @@ function App() {
   const [allFilters, setAllFilters] = useState(true);
 
   const getProjects = projects.map((project, index) => {
-    const { screenshot, projectlink, githublink, logo, technologies, name } =
-      project;
+    const {
+      screenshot,
+      projectlink,
+      githublink,
+      logo,
+      technologies,
+      name,
+      description,
+    } = project;
     const filteredTechnologiesArray = _.keys(_.pickBy(filteredTechnologies));
     const isIncludedInFilter =
       allFilters ||
@@ -33,6 +40,7 @@ function App() {
         <div className="project-overlay">
           <div className="project-overlay-up">{name}</div>
           <div className="project-overlay-middle">
+            <div className="project-description">{description}</div>
             <div className="links-container">
               <Link href={projectlink} className="link-url" image={logo} />
               <div className="link-separator" />
