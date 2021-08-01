@@ -6,6 +6,7 @@ const technologies = [
   'redis',
   'firebase',
   'scss',
+  'typescript',
 ];
 
 export default technologies;
