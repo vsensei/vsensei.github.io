@@ -26,7 +26,7 @@ const projects = [
     projectlink: 'https://project-ceres.herokuapp.com/',
     githublink: 'Project_Ceres',
     logo: 'project_ceres.svg',
-    technologies: ['react', 'redux', 'firebase', 'scss'],
+    technologies: ['react', 'redux', 'firebase', 'scss', 'typescript'],
     description:
       'This is a demo project for food delivery company. Users can check goods, add them to their cart. They can sign in using email-password or google account.',
   },
