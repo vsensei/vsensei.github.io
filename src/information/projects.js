@@ -33,7 +33,7 @@ const projects = [
   {
     name: 'Project_Vesta',
     screenshot: 'project_vesta_screen.png',
-    projectlink: '',
+    projectlink: 'https://github.com/vsensei/project_Vesta',
     githublink: 'project_vesta',
     logo: 'project_vesta.svg',
     technologies: ['react', 'react-native'],
