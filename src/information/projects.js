@@ -30,6 +30,15 @@ const projects = [
     description:
       'This is a demo project for food delivery company. Users can check goods, add them to their cart. They can sign in using email-password or google account.',
   },
+  {
+    name: 'Project_Vesta',
+    screenshot: 'project_vesta_screen.png',
+    projectlink: '',
+    githublink: 'project_vesta',
+    logo: 'project_vesta.svg',
+    technologies: ['react', 'react-native'],
+    description: 'This is a react-native chat project. My first one.',
+  },
 ];
 
 export default projects;

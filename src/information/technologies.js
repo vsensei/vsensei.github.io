@@ -7,6 +7,7 @@ const technologies = [
   'firebase',
   'scss',
   'typescript',
+  'react-native',
 ];
 
 export default technologies;
