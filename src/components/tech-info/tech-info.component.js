@@ -8,11 +8,11 @@ const TechInfo = ({
   filterTechnologies,
 }) => {
   return (
-    <div className="tech-info-container">
+    <div className='tech-info-container'>
       {technologies ? (
         <>
           {technologies.map((tech, index) => (
-            <div className="tech-info" key={index}>
+            <div className='tech-info' key={index}>
               {tech}
             </div>
           ))}
