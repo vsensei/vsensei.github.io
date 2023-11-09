@@ -31,7 +31,7 @@ const MainInfo = ({
       <div className='about'>
         <div className='avatar'>
           <Link href={githubProfile}>
-            <img src='images/avatar.png' alt='avatar' />
+            <img src='images/avatar.jpg' alt='avatar' />
           </Link>
         </div>
         <div className='my-info'>
