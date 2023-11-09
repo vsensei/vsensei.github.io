@@ -19,6 +19,7 @@ const projects = [
     technologies: ['react', 'next.js', 'firebase', 'scss'],
     description:
       'This is a house builder organization`s landing page. Users can check sample projects information, contacts, order a call from organization. Administrators can change projects via admin panel.',
+    isUnderMaintenance: true,
   },
   {
     name: 'Project_Ceres',
@@ -29,6 +30,7 @@ const projects = [
     technologies: ['react', 'redux', 'firebase', 'scss', 'typescript'],
     description:
       'This is a demo project for food delivery company. Users can check goods, add them to their cart. They can sign in using email-password or google account.',
+    isUnderMaintenance: true,
   },
   {
     name: 'Project_Vesta',
@@ -37,7 +39,8 @@ const projects = [
     githublink: 'project_vesta',
     logo: 'project_vesta.svg',
     technologies: ['react', 'react-native'],
-    description: 'This is a react-native chat project. My first one.',
+    description: 'This is a test react-native chat project',
+    isUnderMaintenance: true,
   },
 ];
 
