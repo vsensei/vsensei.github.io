@@ -1,6 +1,6 @@
 const Link = ({ href, className, image, children }) => {
   return (
-    <a href={href} target="_blank" rel="noreferrer nofollow">
+    <a href={href} target='_blank' rel='noreferrer nofollow'>
       {children ? (
         children
       ) : (

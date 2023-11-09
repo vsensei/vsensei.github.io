@@ -1,11 +1,11 @@
-import { useState } from "react";
-import "./App.scss";
-import projects, { githubProfile } from "information/projects";
-import technologies from "information/technologies";
-import MainInfo from "components/main-info/main-info.component";
-import TechInfo from "components/tech-info/tech-info.component";
-import Link from "components/link/link.component";
-const _ = require("lodash");
+import { useState } from 'react';
+import './App.scss';
+import projects, { githubProfile } from 'information/projects';
+import technologies from 'information/technologies';
+import MainInfo from 'components/main-info/main-info.component';
+import TechInfo from 'components/tech-info/tech-info.component';
+import Link from 'components/link/link.component';
+const _ = require('lodash');
 
 function App() {
   const [filteredTechnologies, setFilteredTechnologies] = useState(
@@ -34,23 +34,23 @@ function App() {
 
     return shouldDisplay ? (
       <div
-        className="project"
+        className='project'
         key={index}
         style={{ backgroundImage: `url('images/${screenshot}')` }}
       >
-        <div className="project-overlay">
-          <div className="project-overlay-up">{name}</div>
-          <div className="project-overlay-middle">
-            <div className="project-description">{description}</div>
-            <div className="links-container">
+        <div className='project-overlay'>
+          <div className='project-overlay-up'>{name}</div>
+          <div className='project-overlay-middle'>
+            <div className='project-description'>{description}</div>
+            <div className='links-container'>
               {!isUnderMaintenance ? (
                 <>
-                  <Link href={projectlink} className="link-url" image={logo} />
-                  <div className="link-separator" />
+                  <Link href={projectlink} className='link-url' image={logo} />
+                  <div className='link-separator' />
                   <Link
                     href={`${githubProfile}${githublink}`}
-                    className="link-url"
-                    image="github-logo.svg"
+                    className='link-url'
+                    image='github-logo.svg'
                   />
                 </>
               ) : (
@@ -58,7 +58,7 @@ function App() {
               )}
             </div>
           </div>
-          <div className="project-overlay-down">
+          <div className='project-overlay-down'>
             <TechInfo technologies={technologies} />
           </div>
         </div>
@@ -67,9 +67,9 @@ function App() {
   });
 
   return (
-    <div className="App">
-      <div className="App-content">
-        <div className="main">
+    <div className='App'>
+      <div className='App-content'>
+        <div className='main'>
           <MainInfo
             allFilters={allFilters}
             setAllFilters={setAllFilters}
@@ -77,7 +77,7 @@ function App() {
             setFilteredTechnologies={setFilteredTechnologies}
             githubProfile={githubProfile}
           />
-          <div className="projects-container">{getProjects}</div>
+          <div className='projects-container'>{getProjects}</div>
         </div>
       </div>
     </div>

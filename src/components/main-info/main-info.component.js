@@ -26,15 +26,15 @@ const MainInfo = ({
   };
 
   return (
-    <div className="maininfo">
-      <div className="headline">full-stack web developer</div>
-      <div className="about">
-        <div className="avatar">
+    <div className='maininfo'>
+      <div className='headline'>full-stack web developer</div>
+      <div className='about'>
+        <div className='avatar'>
           <Link href={githubProfile}>
-            <img src="images/avatar.png" alt="avatar" />
+            <img src='images/avatar.png' alt='avatar' />
           </Link>
         </div>
-        <div className="my-info">
+        <div className='my-info'>
           <span>Nikita Mägistu</span>
           <Link href={githubProfile}>
             <i>@vsensei</i>

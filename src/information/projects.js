@@ -10,7 +10,7 @@ const projects = [
     description:
       'This is a music streaming app. Users can listen to music, listen to the radio stream, use smart volume control function. Administrators can add music, change radio queue and control users.',
     isUnderMaintenance: true,
-    },
+  },
   {
     name: 'Stroy-dom-market',
     screenshot: 'project_build_screen.png',
