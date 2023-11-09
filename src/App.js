@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import './App.scss';
-import projects, { githubProfile } from 'information/projects';
-import technologies from 'information/technologies';
-import MainInfo from 'components/main-info/main-info.component';
-import TechInfo from 'components/tech-info/tech-info.component';
-import Link from 'components/link/link.component';
-const _ = require('lodash');
+import { useState } from "react";
+import "./App.scss";
+import projects, { githubProfile } from "information/projects";
+import technologies from "information/technologies";
+import MainInfo from "components/main-info/main-info.component";
+import TechInfo from "components/tech-info/tech-info.component";
+import Link from "components/link/link.component";
+const _ = require("lodash");
 
 function App() {
   const [filteredTechnologies, setFilteredTechnologies] = useState(
@@ -22,6 +22,7 @@ function App() {
       technologies,
       name,
       description,
+      isUnderMaintenance,
     } = project;
     const filteredTechnologiesArray = _.keys(_.pickBy(filteredTechnologies));
     const isIncludedInFilter =
@@ -42,13 +43,19 @@ function App() {
           <div className="project-overlay-middle">
             <div className="project-description">{description}</div>
             <div className="links-container">
-              <Link href={projectlink} className="link-url" image={logo} />
-              <div className="link-separator" />
-              <Link
-                href={`${githubProfile}${githublink}`}
-                className="link-url"
-                image="github-logo.svg"
-              />
+              {!isUnderMaintenance ? (
+                <>
+                  <Link href={projectlink} className="link-url" image={logo} />
+                  <div className="link-separator" />
+                  <Link
+                    href={`${githubProfile}${githublink}`}
+                    className="link-url"
+                    image="github-logo.svg"
+                  />
+                </>
+              ) : (
+                <div>Maintenance in progress</div>
+              )}
             </div>
           </div>
           <div className="project-overlay-down">
