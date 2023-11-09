@@ -1,3 +1,2 @@
 # VSensei`s Portfolio project
-
-## @vsensei
+https://vsensei.github.io/Project_Terra/
