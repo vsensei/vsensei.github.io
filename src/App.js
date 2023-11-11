@@ -23,6 +23,8 @@ function App() {
       name,
       description,
       isUnderMaintenance,
+      isRepoEnabled,
+      isAppEnabled,
     } = project;
     const filteredTechnologiesArray = _.keys(_.pickBy(filteredTechnologies));
     const isIncludedInFilter =
@@ -45,12 +47,18 @@ function App() {
             <div className='links-container'>
               {!isUnderMaintenance ? (
                 <>
-                  <Link href={projectlink} className='link-url' image={logo} />
-                  <div className='link-separator' />
                   <Link
                     href={`${githubProfile}${githublink}`}
                     className='link-url'
                     image='github-logo.svg'
+                    disabled={!isRepoEnabled}
+                  />
+                  <div className='link-separator' />
+                  <Link
+                    href={projectlink}
+                    className='link-url'
+                    image={logo}
+                    disabled={!isAppEnabled}
                   />
                 </>
               ) : (
