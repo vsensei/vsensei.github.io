@@ -9,7 +9,9 @@ const projects = [
     technologies: ['react', 'redux', 'postgresql', 'redis', 'scss'],
     description:
       'This is a music streaming app. Users can listen to music, listen to the radio stream, use smart volume control function. Administrators can add music, change radio queue and control users.',
-    isUnderMaintenance: true,
+    isUnderMaintenance: false,
+    isRepoEnabled: true,
+    isAppEnabled: false,
   },
   {
     name: 'Stroy-dom-market',
@@ -20,7 +22,9 @@ const projects = [
     technologies: ['react', 'next.js', 'firebase', 'scss'],
     description:
       'This is a house builder organization`s landing page. Users can check sample projects information, contacts, order a call from organization. Administrators can change projects via admin panel.',
-    isUnderMaintenance: true,
+    isUnderMaintenance: false,
+    isRepoEnabled: true,
+    isAppEnabled: false,
   },
   {
     name: 'Project_Ceres',
@@ -31,7 +35,9 @@ const projects = [
     technologies: ['react', 'redux', 'firebase', 'scss', 'typescript'],
     description:
       'This is a demo project for food delivery company. Users can check goods, add them to their cart. They can sign in using email-password or google account.',
-    isUnderMaintenance: true,
+    isUnderMaintenance: false,
+    isRepoEnabled: true,
+    isAppEnabled: false,
   },
   {
     name: 'Project_Vesta',
@@ -41,7 +47,9 @@ const projects = [
     logo: 'project_vesta.svg',
     technologies: ['react', 'react-native'],
     description: 'This is a test react-native chat project',
-    isUnderMaintenance: true,
+    isUnderMaintenance: false,
+    isRepoEnabled: true,
+    isAppEnabled: false,
   },
 ];
 
