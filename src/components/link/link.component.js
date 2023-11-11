@@ -4,7 +4,7 @@ const Link = ({ href, className, image, children, disabled }) => {
       {disabled ? (
         <div
           title='maintenance'
-          className={className}
+          className={`${className} disabled`}
           style={{
             backgroundImage: `url('images/${image}')`,
           }}
