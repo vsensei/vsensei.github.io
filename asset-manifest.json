@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Project_Terra/static/css/main.aeddc467.css",
+    "main.js": "/Project_Terra/static/js/main.878bf383.js",
+    "static/js/496.32e489bf.chunk.js": "/Project_Terra/static/js/496.32e489bf.chunk.js",
+    "index.html": "/Project_Terra/index.html",
+    "main.aeddc467.css.map": "/Project_Terra/static/css/main.aeddc467.css.map",
+    "main.878bf383.js.map": "/Project_Terra/static/js/main.878bf383.js.map",
+    "496.32e489bf.chunk.js.map": "/Project_Terra/static/js/496.32e489bf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aeddc467.css",
+    "static/js/main.878bf383.js"
+  ]
+}
